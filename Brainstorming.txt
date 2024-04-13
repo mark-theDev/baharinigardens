@@ -1,0 +1,13 @@
+For Jubilee gardens 
+*landing page can have a green for the navigations and footer
+*white for the body 
+*white for the menu 
+*gold or yellow for the fonts 
+*shoud have a book and get quote files
+*offer payment options, either visa.mastercard and mpesa
+*Use CSS animation for the dropdown menu 
+*e.target on the window element to remove menu 
+*get quote button on the menu
+*booking page to request forms and booking button
+*Include a gallery page
+

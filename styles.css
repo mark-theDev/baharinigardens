@@ -1,0 +1,1252 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    min-height: 100vh; 
+    max-width: 1920px;
+    width: 100%;
+    position: relative;  
+    margin: 0 auto; 
+    display: grid;
+    overflow-x: hidden;
+    
+}
+
+
+body::before{
+    content: '';
+    position: absolute;    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;    
+    z-index: -1;
+    opacity: 1;
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>  HEADER  <<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+
+.header-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(Barin-Images/Grounds.jpeg) no-repeat center/cover;
+    
+}
+
+.header-container::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* background: linear-gradient(145deg, rgb(0, 102, 9) 15%, rgb(0, 102, 9, 0.9) 30%,rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.7) 75%, transparent);     */
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.header-container .hero {
+    font-size: 1.5rem;
+    font-weight: 400;   
+    color:#f2d118;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.header-container .hero h1{
+    font-size: 3.5rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+
+/*.......................... Navigation ...........................  */
+
+.nav-section{
+    display: flex;
+    background: hsl(125, 100%, 20%);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.);
+    min-height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+
+.nav-section .logo-container{
+    display: flex;
+    flex-direction: column;
+    color: #efb907;
+    max-width: 170px;
+    width: 100%;
+}
+
+.nav-section .logo-container h4{
+    border-bottom: 2px solid #efcc07;
+    padding: 3px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav-section .logo-container h5{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links {   
+    display: flex;         
+    align-items: center;     
+    gap: 30px;   
+    width: 100%; 
+    justify-content: center;       
+}
+
+.nav-links li{
+    padding: 5px;
+    transition: 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-links a{   
+    color: #f2d21b;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-links a:hover{
+    color: #f19203;
+}
+
+.services{
+    position: relative;
+}
+
+.services-link{
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: -50%;
+    height: auto;
+    background: hsl(125, 100%, 20%); 
+    width: 200px;   
+    z-index: 10; 
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 5px 5px 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    animation-name: rollDown;    
+    animation-duration: 0.5s;
+}
+
+.dropMenu:hover .services-link{
+    display: none;
+}
+
+.services-link li{
+    margin: 0 10px;
+    padding: 5px 0;
+}
+
+.services-link a{
+    color: #f2d21b;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.services-link a:hover{
+    color: #f19203;
+}
+
+.booking-btn{
+    padding: 1px 15px;
+    background: #f9d403; 
+    border-radius: 5px;
+    color: #000; 
+    font-size: 16px; 
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.booking-btn:hover{
+    background: hsl(51, 87%, 63%);
+    box-shadow: 0 0 1px 1px rgb(251, 249, 249);
+}
+
+.booking-btn:active{
+    transform: scale(0.9);
+}
+
+.booking-btn a{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Menu Button<<<<<<<<<<<<<<<<<<<<<<<< */
+.menu-btn{
+    display: none;
+    font-size: 2rem;    
+    top: 20px;
+    right: 30px;
+    color: #f2d115;
+    cursor: pointer;
+    position: absolute;    
+}
+
+.menu-btn i{
+    transition: 1s ease;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Sidebar <<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.sidebar{    
+    position: absolute;    
+    width: 300px;
+    display: none;
+    flex-direction: column;      
+    align-items: center;
+    height: 0px;
+    padding: 10px;
+    background: hsl(125, 100%, 20%);     
+    /* background: rgba(0, 0, 0, 0.5); */
+    right: 10px; 
+    top: 75px;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0 0 5px grey;
+    transition: 0.5s ease;
+}
+
+.sidebar.open{
+    height: 400px;    
+    transition: 0.3s ease;
+}
+
+.sidebar li{
+    text-align: center;
+    width: 100%; 
+    padding: 20px 0;        
+    cursor: pointer;
+}
+
+.sidebar a{
+    color: #f2d115;
+    font-size: 16px;
+    font-weight: 400;  
+    transition: 0.3s ease;      
+}
+
+.sidebar a:hover{
+    color:hsl(43, 93%, 45%);  
+}
+
+.sidebar .booking-btn{
+    width: 85%;
+    height: 15px;   
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+    border-bottom: none;
+    padding: 15px 0;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 1;
+}
+
+.sidebar .booking-btn li{
+    width: 100%;
+    background: #000;
+    padding: 10px;
+}
+
+.sidebar .booking-btn li:hover{
+    border: #fff;
+}
+
+.sidebar .booking-btn a{
+    color: #000;
+    font-weight: 500;
+}
+
+.sidebar .booking-btn:hover{
+    color: #fff;
+}
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>   Main   <<<<<<<<<<<<<<<<<<<<<<<<<  */
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Landing PAGE <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.home-page{        
+    width: 80%;
+    height: 500px;
+    /* background: rgba(0, 0, 0, 0.5); */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* color: #efcc07; */
+    color: #fff;
+    /* backdrop-filter: blur(3px); */
+    border-radius: 20px;    
+    background-image: url(images/weddings-in-Zen-garden.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    display: block;
+    opacity: 1;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.home-page .landing-page{
+    width: 100%;
+    height: 100%;   
+    background: linear-gradient(135deg, rgb(0, 102, 9, 1) 10%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.7) 70%, transparent);
+}
+
+.landing-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    max-width: 600px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.home-page .landing-page h1 {
+    font-size: 2.5rem; /* Adjust font size as needed */
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to bottom, rgba(239, 204, 7, 1) 70%, rgba(239, 204, 7, 0));
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    background-clip: text;
+    text-align: center;
+    padding: 30px;
+}
+
+.home-page .landing-page h2 {
+    margin-bottom: 5px;
+    font-size: 1.5rem; 
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to bottom, rgba(239, 204, 7, 1) 50%, rgba(239, 204, 7, 0));
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    background-clip: text;
+}
+
+.home-page .landing-page p {
+    font-size: 3rem; /* Adjust font size as needed */
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to bottom, rgba(239, 204, 7, 1) 40%, rgba(239, 204, 7, 0));
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    background-clip: text;
+    padding: 30px 30px;
+}
+
+.home-page .landing-page p{
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>> Section: SLIDER <<<<<<<<<<<<<<<<<<<<<< */
+
+.slider-container{       
+    max-width: 1920px;           
+    margin: 0 60px;
+         
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-radius: 10px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    box-shadow: 0 0 2px 2px rgb(233, 232, 232);
+}
+
+.slider-container h1{
+    text-align: center;
+    color: #efb907;
+    border-bottom: 2px solid #efcc07;
+    padding: 20px;
+    margin: 0 20px;
+}
+
+.slider{
+    animation-name: grow;
+    animation-duration: 0.5s;
+    width: 100%;
+}
+
+.slides{
+    display: flex;           
+    width: 100%;
+    height: 400px;         
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;   
+    transition: 0.5s ease; 
+    padding: 20px;
+}
+
+.slides .slide-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.slides .slide-title{
+    font-family: "Roboto";
+    font-size: 18px;
+    color: #f2d118;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f79a0e;
+    width: 100%;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.slides .slide-description{
+    font-size: 12px;
+    padding-top: 20px;
+    line-height: 1.5;
+    font-weight: 600;
+    color:hsl(42, 95%, 15%); 
+}
+
+.slides.show{
+    display: flex;
+}
+
+.slider img{
+    max-width: 50%;
+    
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.slide-pointer{
+    /* background: red; */
+    font-size: 3rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.prev{
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    animation-name: slideLeft;
+    animation-duration: 2s;
+    padding: 5px 0 5px 10px;
+    transition: 0.3s ease;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    border-radius: 10px;
+}
+
+.prev:hover{
+    background: rgba(255,255,255, 0.4);
+    
+}
+
+.slide-pointer:hover{
+    color: #ef9711;
+}
+
+.next{
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    animation-name: slideRight;
+    animation-duration: 2s;
+    padding: 5px 10px 5px 0;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.next:hover{
+    background: rgba(255,255,255, 0.4);
+}
+
+.more-info {
+    width: 100px;
+    text-align: center;
+    background: #efcc07;
+    border: none;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: hsl(0, 0%, 6%);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.more-info:hover{
+    box-shadow: 0 0 5px brown;
+}
+
+.close-slider{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #f6f0cc;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s ease;
+}
+
+.close-slider:hover{
+    background: #efcc07;
+}
+
+.close-slider i{
+    color: #000;
+    font-size: 1.3rem;
+}
+
+
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>> Booking Form <<<<<<<<<<<<<<<<<<<<<<<  */
+
+.booking{
+  
+    max-width: 80vw;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    background: #fff;
+    border-radius: 10px;    
+   
+    box-sizing: 0 0 2px 2px grey;
+    transition: 1s ease;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    
+
+}
+
+.booking-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;    
+}
+
+.booking-container .info-page{
+    position: relative;
+    
+    width: 100%;
+    background: url(images/jubilee-garden.jpg) no-repeat center center/ cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px; 
+    text-align: center;
+}
+
+.booking-container .info-page h4{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.booking-container .info-page p{
+    color: #fff;
+    line-height: 1.5;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.booking form{
+    padding: 10px;    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;    
+}
+
+.booking-container .booking-form{
+    display: block;
+}
+
+/* >>>>>>>>>>>> Inquiry Form <<<<<<<<<<<<<< */
+
+.booking .inquiry-container{
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 1;
+    display: none;
+}
+
+.inquiry-container h4{
+    margin-top: 30px;
+}
+
+.inquiry-container input{
+    margin-bottom: 10px;
+}
+
+.inquiry-container label{
+    margin-bottom: 5px;
+}
+
+#user-inquiry{
+    height: auto;
+    min-height: 80px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+    background: #f9eb9e;
+    border: none;
+    border-radius: 5px;
+}
+
+#user-inquiry:focus{
+    border: #ef9711;
+    outline: none;
+}
+
+.submit-inquiry{  
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 auto;
+    margin-top: 20px;    
+    width: 100%;
+    text-align: center;
+}
+
+.submit-inquiry span{
+    width: 100px;
+    background: hsl(36, 68%, 55%);  
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.submit-inquiry span:hover{
+    background: hsl(36, 87%, 50%);
+}
+
+/* <>>>> */
+
+.booking form h4{
+    font-size: 22px;
+    text-align: center;
+}
+
+input[type='text'],
+input[type='email'] {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    background: rgb(241, 219, 95,0.5);
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+#userName,
+#userEmail,
+#userNumber{
+    margin-bottom: 10px;
+}
+
+input[type="date"],
+#eventType,
+#payment-options{
+    height: 30px;
+    background: rgb(241, 219, 95,0.5);
+    border: none;
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    transition: 0.5s ease;
+    margin-bottom: 10px;
+}
+
+.activityType{  
+    display: flex;  
+    align-items: center;
+    width: 100%;
+    height: 30px;  
+    margin-top: 10px;  
+}
+
+.activityType label{
+    margin-right: 20px;
+}
+
+.booking form .booking-date{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.booking form .booking-date div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.booking-form .formInquiry{
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.booking-form .formInquiry:hover{
+    color: blue;
+}
+
+label{
+    margin-right: 5px;
+    color: #000;
+    font-weight: 500;
+}
+
+.payment-section{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.payment-section .payment-options{
+    display: flex;
+    flex-direction: column;
+}
+
+.submitForm{   
+    height: 30px;
+    font-size: 17px;
+    font-weight: 500;
+    background: hsl(51, 72%, 40%);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 3px;
+    color: #fff;
+    transition: 0.3s ease;
+    cursor: pointer;
+    width: 150px;
+    margin: 0 auto;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitForm:hover{
+    background: hsl(51, 93%, 27%);
+}
+
+input:hover,
+#eventType:hover,
+#payment-options:hover{
+    box-shadow: 0 0 3px #ef9711; 
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.close-form i{
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.close-form i:hover{    
+    background: #f1de74;
+}
+
+.close-form i:active{
+    transform: scale(0.9);
+}
+
+form p{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+form p a{
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>> Payment Options <<<<<<<<<<<<<<<<<< */
+
+.mobile-pay{
+    display: none;
+    background: hsl(51, 82%, 80%);
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    border-radius: 0 5px 5px 0;
+    transition: 0.5s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.mpesa-payment{
+    height: 30px;
+    float: right;
+    padding-right: 20px;
+    border-radius: 5px 0 0 5px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>> Registration Modal <<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.booking-modal{
+    display: none;
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease;
+    z-index: 10;
+}
+
+.success-booking{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 100px;
+    background:  #efcc07;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    animation-name: fadeIn;
+    animation-duration: 0.8s;
+}
+
+.success-booking h3{
+    color: hsl(125, 100%, 20%);    
+}
+
+
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>> Gallery Page <<<<<<<<<<<<<<<< */
+
+.photo-container{ 
+    margin: 0 auto;   
+    width: 95%;       
+    background: #fff;   
+    padding: 20px;    
+    transition: 0.3s ease;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    border: 20px solid #fff;
+    animation-name: fadeIn;
+    animation-duration: 1.8s;
+    box-shadow: 0 0 2px 2px rgb(233, 232, 232);
+}
+
+.photos-gallery{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 15px; 
+    grid-auto-rows: 270px;
+    grid-auto-flow: dense;
+    
+}
+
+.photo-container::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 10px;
+}
+
+.photo-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.photo-container::-webkit-scrollbar-thumb {
+    background: hsl(0, 3%, 87%);
+    border-radius: 5px;
+}
+
+.photo-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.photos-gallery a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photos-gallery a:hover{
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+}
+
+.photos-gallery img{
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.photos-gallery a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.photos-gallery .wide{
+    grid-column: span 2;
+}
+
+.photos-gallery .tall{
+    grid-row: span 2;
+}
+
+.photos-gallery .wide{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>> FOOTER <<<<<<<<<<<<<<<<<<<<<<<<< */
+
+footer{
+    height: 190px;
+    width: 100%;
+    /* max-width: 1280px; */     
+    bottom: 0;
+    text-align: center;
+    /* background: linear-gradient(to bottom,rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.9)); */
+    background: hsl(125, 100%, 20%);
+    z-index: 5;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-contact{
+    text-align: start;
+    color: #efcc07;
+}
+
+.footer-content h4{
+    margin-bottom: 5px;
+    padding: 5px 0;
+    border-bottom: 2px solid #f0d227;
+    color: #efcc07;
+}
+
+.footer-contact h5{
+    padding: 5px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.footer-menu{
+    display: flex;
+    flex-direction: column;
+    color: #efcc07;
+}
+
+.footer-menu a{
+    color: #efcc07;
+    padding: 2px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;    
+}
+
+.footer-links a{
+    padding: 5px;
+}
+
+.fa-brands {
+    font-size: 15px;
+    color: #efcc07;
+}
+
+.footer-copyright{
+    color: #efcc07;
+    word-spacing: normal;
+    font-size: 14px;
+    padding: 8px 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.footer-copyright span{   
+    word-spacing: normal;
+    margin: 0 10px;
+}
+
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>> MEDIA QUERRIES<<<<<<<<<<<<<<<<<<<<<<<<< */
+@media (max-width: 990px){
+    .header{
+        align-items: center;
+    }
+
+    .menu-btn{
+        display: block;
+    }
+
+    .nav-links,
+    .header .booking-btn{
+        display: none;
+    }
+
+    .slider-container{
+        width: 90%;
+    }
+
+    .booking .info-page{
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .slides img {
+        height: 290px;
+    }
+
+    .sidebar.open{
+        display: block;
+    }    
+
+    .home-page{
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 690px){
+    
+    .booking{
+        width: 100%;
+        margin: 0 10px;
+    }
+    .slides img {
+        height: 250px;
+    }
+
+    .home-page{
+        width: 80%;
+    }
+
+    .home-page .landing-page h1{
+        font-size: 2rem;
+    }
+
+    .home-page .landing-page h4{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px){
+    .header{
+        padding: 0 10px;
+    }
+
+    .sidebar.open{
+        display: flex;
+        width: 100vw;
+        right: 0;
+    } 
+
+    .booking .info-page{
+        display: none;
+    }
+
+    .slides img {
+        height: 200px;
+    }
+
+    .slides p{
+        font-size: 14px;
+    }
+
+    .home-page .landing-page h1{
+        font-size: 1.5rem;
+    }
+
+    .slides:nth-child(1) p{
+        color:hsl(42, 95%, 15%); 
+        font-size: 18px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        font-weight: 500;
+        padding: 0 50px;
+        text-align: center;
+    }
+
+    .footer{
+        height: 20px;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes grow{
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }        
+}
+
+@keyframes SlideIn{
+    from{transform: translateY(-70px);}
+}
+
+@keyframes dropDown{
+    from{
+        top: 0;
+    }   
+
+    to{
+        top: 50%;
+    }
+}
+
+@keyframes slideLeft{
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0.7;
+    }
+
+    70%{
+        opacity: 0.5;
+    }
+    100%{
+        left: -20px;
+        opacity: 0;
+    }
+}
+
+@keyframes slideRight{
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0.7;
+    }
+
+    70%{
+        opacity: 0.5;
+    }
+    100%{
+        right: -50px;
+        opacity: 0;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        top: 105px;
+    }
+
+    to{
+        top: 405px;
+    }
+}
+
+
